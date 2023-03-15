@@ -43,6 +43,7 @@ export default {
         if (recipe.recipeId === updatedRecipe.itemId) {
           recipe.recipeTitle = updatedRecipe.itemTitle;
           recipe.recipeDescription = updatedRecipe.itemDesc;
+          recipe.recipeStatus = updatedRecipe.itemStatus;
         }
       });
       this.saveToLocalStorage();

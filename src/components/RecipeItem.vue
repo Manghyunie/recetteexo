@@ -23,12 +23,14 @@
           @blur.stop="editDescription = false"
         ></textarea>
       </div>
+      {{ recipe.itemStatus }}
       <button
         v-show="showDescription"
         @click="editDescription = !editDescription"
       >
         {{ editDescriptionButton }}
       </button>
+      <button @click="moveToDeleted">Delete</button>
     </div>
   </template>
   
@@ -50,9 +52,15 @@
         recipe: {
           itemTitle: this.recipeDetails.recipeTitle,
           itemDesc: this.recipeDetails.recipeDescription,
+          itemStatus: this.recipeDetails.taskStatus,
           itemId: this.recipeDetails.recipeId
         }
       };
+    },
+    methods: {
+      moveToDeleted() {
+        this.recipe.itemStatus = "deleted";
+      }
     },
     updated() {
       this.$emit("recipe-update", this.recipe);
