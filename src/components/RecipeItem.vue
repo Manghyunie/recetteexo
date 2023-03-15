@@ -41,6 +41,7 @@
       RecipeDetails: {
         recipeTitle: String,
         recipeDescription: String,
+        recipeStatus: String,
         recipeId: Number
       }
     },
